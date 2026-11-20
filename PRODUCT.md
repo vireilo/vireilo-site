@@ -10,6 +10,8 @@ web
 
 **Primary: capital partners and lenders** evaluating Vireilo Ventures as an enterprise to finance or partner with. They arrive to check who is behind the company, how it is structured, and whether it carries itself like an institution. (Confirmed 2026-11-20.)
 
+The site also has to make sense to anyone who receives an email from a vireilo.com address and looks the company up: Vireilo Ventures is the holding company for everything, so this is where they land.
+
 ## Product Purpose
 
 vireilo.com is the public face of Vireilo Ventures, a holding company that acquires, develops, owns and operates businesses and real assets across the Midwest. The site is a brochure and a capital and deal-flow funnel: it establishes the enterprise, explains its structure and principles, and gives a serious visitor a way to make contact.
@@ -32,6 +34,7 @@ Success is a capital partner or lender leaving with a clear, credible picture of
 - Assets are cached for a year, so a changed image needs a new filename.
 - **Content rules**: no dollar figures; counts and years only. No returns, terms, or solicitation language of any kind. Positioning copy refers to "operating companies" and does not name individual brands. Tenant names for projects in development appear only with written clearance. No residential addresses.
 - The education and community offering is a separate brand and does not appear on this site.
+- The company structure is not diagrammed or explained on the site beyond the legal identification already published; that detail is shared later, directly.
 - **Undecided**: whether portfolio brands are named anywhere on the site or kept off it entirely. Which business mailing address the site should publish. Attorney review of the legal pages is still outstanding.
 
 ## Brand Commitments
