@@ -9,6 +9,7 @@
   --on-dark:rgba(247,243,235,.8); --rule-dark:rgba(247,243,235,.18); --rule-light:rgba(20,17,11,.2);
   --pad:clamp(1.25rem,4vw,3.5rem); --max:82rem;
   --ease:cubic-bezier(.16,1,.3,1);
+  --t-h2:clamp(2.1rem,4.4vw,3.6rem); --t-h3:1.25rem; --t-lead:clamp(1.1rem,1.5vw,1.3rem); --t-body:1.0625rem; --t-small:.95rem;
   --sans:"Archivo",system-ui,sans-serif; --serif:"Cormorant Garamond",Georgia,serif;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -73,53 +74,59 @@ a{color:inherit}
 /* sections */
 .sec{padding:clamp(4.5rem,10vw,8.5rem) var(--pad)}
 .in{max-width:var(--max);margin:0 auto}
-.sec h2{font-weight:800;font-stretch:110%;font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.02;letter-spacing:-.03em;text-wrap:balance}
-.sec h3{font-weight:700;font-stretch:108%;font-size:1.3rem;line-height:1.2;letter-spacing:-.01em}
-.lead{font-size:clamp(1.1rem,1.5vw,1.3rem);line-height:1.5;max-width:36em;color:var(--on-dark)}
+.sec h2{font-weight:800;font-stretch:110%;font-size:var(--t-h2);line-height:1.02;letter-spacing:-.03em;text-wrap:balance}
+.sec h3{font-weight:700;font-stretch:108%;font-size:var(--t-h3);line-height:1.2;letter-spacing:-.01em}
+.lead{font-size:var(--t-lead);line-height:1.5;max-width:36em;color:var(--on-dark)}
 .head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:1.5rem 4rem;align-items:end;margin-bottom:clamp(2.5rem,5vw,4.5rem)}
 .dark p{color:var(--on-dark)}
 .on-light{background:var(--ivory);color:var(--ink)}
 .on-light .lead,.on-light p{color:#3a3a32}
 
 .platform{background:var(--navy-deep)}
-.verbs li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:.75rem 4rem;align-items:baseline;padding:1.6rem 0;border-top:1px solid var(--rule-dark)}
-.verbs li:last-child{border-bottom:1px solid var(--rule-dark)}
-.verbs h3{font-weight:800;font-stretch:112%;font-size:clamp(2rem,4.6vw,3.6rem);letter-spacing:-.03em;line-height:1;color:var(--copper-light)}
-.verbs p{font-size:1.15rem;max-width:34em}
+.verbs li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:.75rem 4rem;align-items:baseline;padding:1.6rem 0}
+.verbs h3{font-weight:800;font-stretch:110%;font-size:var(--t-h2);letter-spacing:-.03em;line-height:1;color:var(--copper-light)}
+.verbs p{font-size:var(--t-lead);max-width:34em}
 
 .meaning{background:linear-gradient(160deg,var(--green) 0%,var(--green-deep) 100%);overflow:hidden}
-.meaning .latin{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(6rem,24vw,21rem);line-height:.8;color:var(--copper-light);letter-spacing:-.02em;margin:0 0 clamp(1.5rem,4vw,3rem) -.04em;white-space:nowrap}
+.meaning .latin{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(4.25rem,10.5vw,9rem);line-height:.95;color:var(--copper-light);letter-spacing:-.02em;margin:0 0 clamp(1rem,2.5vw,2rem) -.03em;white-space:nowrap}
 .meaning .cols{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:2rem 4rem;align-items:start}
 .meaning h2 em{font-family:var(--serif);font-weight:500;font-size:1.12em;letter-spacing:0}
 .meaning .txt p+p{margin-top:1.2rem}
-.meaning .txt p:first-child{font-size:1.2rem;color:var(--ivory)}
+.meaning .txt p:first-child{font-size:var(--t-lead);color:var(--ivory)}
 
 .mv{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule-light)}
 .mv>div{padding:2.2rem 0}
 .mv>div:first-child{padding-right:3rem;border-right:1px solid var(--rule-light)} .mv>div:last-child{padding-left:3rem}
-.mv h3{margin-bottom:.9rem;color:var(--copper);font-size:1.05rem;letter-spacing:.02em}
-.mv p{font-size:clamp(1.2rem,1.9vw,1.55rem);line-height:1.4;color:var(--ink);font-weight:500;letter-spacing:-.01em}
+.mv h3{margin-bottom:.9rem;color:var(--copper)}
+.mv p{font-size:var(--t-lead);line-height:1.5;color:var(--ink)}
 .values{background:var(--ivory-dark);color:var(--ink)}
 .values .lead,.values p{color:#3a3a32}
 .vals{columns:2;column-gap:4rem}
-.vals li{break-inside:avoid;display:grid;grid-template-columns:11rem minmax(0,1fr);gap:1rem;padding:1.25rem 0;border-top:1px solid var(--rule-light)}
-.vals h3{font-size:1.12rem}
+.vals li{break-inside:avoid;display:grid;grid-template-columns:12.5rem minmax(0,1fr);gap:1rem;padding:1.25rem 0}
+
 
 .philosophy{background:linear-gradient(200deg,var(--green-deep) 0%,var(--navy) 70%,var(--navy-deep) 100%)}
 .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem 3rem}
-.three li{border-top:2px solid var(--copper-light);padding-top:1.3rem}
+.three li{padding-top:1.3rem}
 .three h3{margin-bottom:.7rem}
 
 .structure{background:var(--navy-deep)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:2rem 4rem}
-.two li{border-top:1px solid var(--rule-dark);padding-top:1.3rem}
+.two li{padding-top:1.3rem}
 .two h3{margin-bottom:.7rem;color:var(--copper-light)}
-.note{margin-top:3rem;border:1px solid var(--rule-dark);padding:1.4rem 1.6rem;font-size:.98rem;max-width:62rem}
+.note{margin-top:3rem;border:1px solid var(--rule-dark);padding:1.4rem 1.6rem;font-size:var(--t-small);max-width:62rem}
 
 .close{background:linear-gradient(100deg,var(--copper),var(--copper-light));color:var(--ink)}
 .close .in{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:2.5rem 4rem;align-items:end}
 .close blockquote{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.5rem,2.6vw,2.15rem);line-height:1.25;margin-top:1.8rem;max-width:22em}
-.close p{color:#2a2114;font-weight:500;margin-bottom:1.6rem;max-width:30em}
+.close p{color:#2a2114;font-size:var(--t-lead);font-weight:500;margin-bottom:1.6rem;max-width:30em}
+
+/* drawn rules */
+.verbs li,.vals li,.three li,.two li{position:relative}
+.verbs li::before,.vals li::before,.three li::before,.two li::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--rule-dark);transform-origin:left}
+.vals li::before{background:var(--rule-light)}
+.three li::before{height:2px;background:var(--copper-light)}
+.nav-links a[aria-current]{color:var(--ivory);box-shadow:0 2px 0 var(--copper-light)}
 
 /* footer */
 .foot{background:var(--navy-deep);border-top:1px solid var(--rule-dark);padding:4rem var(--pad) 2rem;font-size:.95rem}
@@ -198,4 +205,31 @@ a{color:inherit}
   .band{animation:wipe 1s var(--ease) .55s both}
   @keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}
 }
+
+/* scroll choreography: each section arrives in its own way. Applied only when site.js runs (.js) */
+@media (prefers-reduced-motion:no-preference){
+  .js [data-r]{opacity:0;transform:translateY(2rem);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:calc(var(--i,0)*110ms)}
+  .js [data-r="head"]{transform:translateY(1.2rem);filter:blur(8px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease),filter 1.1s var(--ease)}
+  .js [data-r].seen{opacity:1;transform:none;filter:none}
+  .js li[data-r]::before,.js li[data-line]::before{transform:scaleX(0);transition:transform 1.2s var(--ease);transition-delay:calc(var(--i,0)*110ms)}
+  .js li[data-r].seen::before,.js li[data-line].seen::before{transform:scaleX(1)}
+  /* positioning: the four verbs light up as they cross the middle of the screen */
+  .js .verbs h3{color:rgba(247,243,235,.22);transform:translateX(-.35em);transition:color .7s ease,transform .9s var(--ease)}
+  .js .verbs p{opacity:.35;transition:opacity .7s ease}
+  .js .verbs li.lit h3{color:var(--copper-light);transform:none}
+  .js .verbs li.lit p{opacity:1}
+  /* meaning: the Latin word is set letter by letter */
+  .js [data-latin] span{display:inline-block;opacity:0;transform:translateY(.35em) rotate(4deg);transition:opacity .9s var(--ease),transform 1.1s var(--ease);transition-delay:calc(var(--i)*80ms)}
+  .js [data-latin].seen span{opacity:1;transform:none}
+  /* mission: the centre line draws down */
+  .js .mv[data-line]>div:first-child{border-right-color:transparent;position:relative}
+  .js .mv[data-line]>div:first-child::after{content:"";position:absolute;right:-1px;top:0;bottom:0;width:1px;background:var(--rule-light);transform:scaleY(0);transform-origin:top;transition:transform 1.3s var(--ease) .2s}
+  .js .mv[data-line].seen>div:first-child::after{transform:scaleY(1)}
+  /* close: the copper field wipes in, echoing the first screen */
+  .js [data-wipe]{background-color:var(--navy-deep);background-repeat:no-repeat;background-size:0% 100%;transition:background-size 1.3s var(--ease)}
+  .js [data-wipe].seen{background-size:100% 100%}
+  .js [data-wipe] [data-r]{transition-delay:calc(.45s + var(--i,0)*110ms)}
+  .hero-main{will-change:transform,opacity}
+}
+@media (max-width:60rem){.js .mv[data-line]>div:first-child::after{display:none}.js .mv[data-line]>div:first-child{border-right:0}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

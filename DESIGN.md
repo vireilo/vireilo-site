@@ -42,7 +42,21 @@ VIREILO in Cormorant capitals, letterspaced .24em, with the copper leaf standing
 
 ## Motion
 
-One authored entrance on the first screen: the headline rises, the leaf's stem draws and its blades grow, the letters of the wordmark spread outward from the I, VENTURES tracks open, and the copper band wipes in. The hero glow drifts slowly. Nothing else animates on scroll. All of it is switched off under `prefers-reduced-motion`.
+The page is meant to be scrolled as one continuous piece, with each section arriving in its own way.
+
+- **First screen**: the headline rises, the leaf's stem draws and its blades grow, the wordmark's letters spread outward from the I, VENTURES tracks open, and the copper band wipes in. The glow in the gradient drifts slowly. On scroll the first screen eases back and fades.
+- **Positioning**: Own, Operate, Scale and Steward sit dim and light to copper one at a time as each crosses the middle of the screen.
+- **Meaning**: the Latin word is set letter by letter and drifts slightly sideways with the scroll.
+- **Mission and Vision**: the centre line draws downward between the two statements.
+- **Lists**: rules draw from the left and rows follow in sequence.
+- **Close**: the copper field wipes in from the left, echoing the first screen.
+- **Navigation**: the section being read is underlined in copper; a copper hairline at the top shows progress.
+
+All easing is one exponential ease-out (`--ease`). Everything is switched off under `prefers-reduced-motion`, and all content is visible without JavaScript. A revealed element gets the class `seen`.
+
+## Type scale
+
+`--t-h2` section headings and the four verbs · `--t-h3` item headings · `--t-lead` lead paragraphs and statements · `--t-body` running text · `--t-small` notes. Use these tokens; do not set one-off sizes.
 
 ## Layout
 
