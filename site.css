@@ -167,6 +167,20 @@ a{color:inherit}
 .policy strong,.page strong{color:var(--ivory)}
 .updated{color:rgba(247,243,235,.66);font-size:.95rem;margin:.8rem 0 2rem}
 
+/* login: two doors */
+.doors{margin:3rem 0 2rem}
+.doors li{position:relative}
+.doors li::before,.doors li:last-child::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--rule-dark)}
+.doors li:last-child::after{top:auto;bottom:0}
+.doors a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.2rem 2rem;align-items:baseline;padding:1.8rem 0;text-decoration:none;color:var(--ivory);transition:padding .5s var(--ease)}
+.door-name{font-weight:800;font-stretch:110%;font-size:var(--t-h2);line-height:1;letter-spacing:-.03em;color:var(--copper-light);transition:color .3s}
+.door-desc{grid-column:1;color:var(--on-dark);font-size:var(--t-lead)}
+.door-go{grid-column:2;grid-row:1/3;align-self:center;font-weight:600;font-size:var(--t-small);color:var(--on-dark);border:1px solid var(--rule-dark);padding:.55rem .9rem;transition:background .3s,color .3s,border-color .3s}
+.doors a:hover,.doors a:focus-visible{padding-left:.8rem}
+.doors a:hover .door-name,.doors a:focus-visible .door-name{color:var(--ivory)}
+.doors a:hover .door-go,.doors a:focus-visible .door-go{background:var(--copper-light);border-color:var(--copper-light);color:var(--ink)}
+@media (max-width:36rem){.doors a{grid-template-columns:1fr}.door-go{grid-column:1;grid-row:auto;justify-self:start;margin-top:.8rem}}
+
 /* responsive */
 @media (max-width:60rem){
   .menu-btn{display:block}

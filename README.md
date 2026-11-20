@@ -9,7 +9,7 @@ Hand-authored static HTML — not build output. There is no bundler, no framewor
 build step: what is in this repo is byte-for-byte what Netlify serves. Edit the `.html`
 files directly. Every page shares one stylesheet (`site.css`) and one small script
 (`site.js`); the navigation and footer markup are repeated in each page, so a change to
-either must be made in all eight `.html` files.
+either must be made in every `.html` file.
 
 ## Provenance
 
@@ -28,6 +28,7 @@ check which was edited last, because a Netlify-side edit would not appear here.
 | `index.html` | Landing page |
 | `contact.html` / `contact-thank-you.html` | Contact form + post-submit page |
 | `sms-consent.html` / `sms-thank-you.html` | SMS opt-in consent flow + post-submit page |
+| `login.html` | Login page: links to the application (`app.vireilo.com`) and the dashboard (`dash.vireilo.com`). Not indexed. |
 | `privacy.html`, `terms.html` | Legal pages |
 | `404.html` | Netlify's not-found page (served automatically) |
 | `_headers` | Netlify response headers — security headers plus asset caching |
