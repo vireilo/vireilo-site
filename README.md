@@ -28,7 +28,7 @@ check which was edited last, because a Netlify-side edit would not appear here.
 | `index.html` | Landing page |
 | `contact.html` / `contact-thank-you.html` | Contact form + post-submit page |
 | `sms-consent.html` / `sms-thank-you.html` | SMS opt-in consent flow + post-submit page |
-| `login.html` | Login page: links to the application (`app.vireilo.com`) and the dashboard (`dash.vireilo.com`). Not indexed. |
+| `login.html` | Login page: two buttons, Application (`app.vireilo.com`) and Dashboard (`dash.vireilo.com`). The addresses are link targets only and are not shown on the page. Not indexed. |
 | `privacy.html`, `terms.html` | Legal pages |
 | `404.html` | Netlify's not-found page (served automatically) |
 | `_headers` | Netlify response headers — security headers plus asset caching |
