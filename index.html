@@ -19,1053 +19,160 @@
   <meta name="twitter:title" content="Vireilo Ventures | Own. Operate. Scale." />
   <meta name="twitter:description" content="Technology-enabled economic development with a long-term orientation." />
   <meta name="twitter:image" content="https://vireilo.com/assets/og.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Cpath d=%27M20 36 C20 28 20 22 20 16%27 stroke=%27%231B4D3E%27 stroke-width=%272.4%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3Cpath d=%27M20 18 C17 10 20 4 20 2 C20 4 23 10 20 18 Z M19 21 C12 19 8 13 8 9 C13 10 18 14 19 21 Z M21 21 C28 19 32 13 32 9 C27 10 22 14 21 21 Z%27 fill=%27%231B4D3E%27/%3E%3C/svg%3E" />
-  <style>
-    :root {
-      --green: #1B4D3E;
-      --green-deep: #0F2E25;
-      --green-light: #2A6B56;
-      --navy: #0B1C2C;
-      --navy-deep: #06111A;
-      --graphite: #2F3437;
-      --ivory: #F7F3EB;
-      --ivory-dark: #EDE6D9;
-      --copper: #B87333;
-      --copper-light: #D4A574;
-      --copper-bright: #E8B86D;
-      --white: #FFFFFF;
-      --text-dark: #1A1F1C;
-      --text-muted: #5A635C;
-      --radius: 12px;
-      --transition: cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--navy-deep);
-      color: var(--ivory);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 600;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-    }
-
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: inherit; text-decoration: none; }
-
-    /* ========== NAV ========== */
-    .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 1.15rem 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: background 0.4s var(--transition), backdrop-filter 0.4s, padding 0.3s;
-    }
-    .nav.scrolled {
-      background: rgba(6, 17, 26, 0.94);
-      backdrop-filter: blur(16px);
-      padding: 0.8rem 2.5rem;
-      border-bottom: 1px solid rgba(184, 115, 51, 0.12);
-    }
-
-    .nav-logo { display: flex; align-items: center; gap: 0.55rem; }
-    .nav-leaf { width: 19px; height: 19px; flex-shrink: 0; }
-    .nav-word {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 600; font-size: 1.22rem; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--ivory); line-height: 1;
-    }
-    .nav-sub {
-      font-family: 'Inter', sans-serif; font-size: 0.56rem; font-weight: 600;
-      letter-spacing: 0.32em; text-transform: uppercase;
-      color: var(--copper-light); line-height: 1; transform: translateY(1px);
-    }
-    .nav-logo:hover .nav-word { color: #fff; }
-
-    .nav-links {
-      display: flex;
-      gap: 2.1rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: rgba(247, 243, 235, 0.7);
-      transition: color 0.25s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 1.5px;
-      background: var(--copper);
-      transition: width 0.3s var(--transition);
-    }
-    .nav-links a:hover { color: var(--ivory); }
-    .nav-links a:hover::after { width: 100%; }
-
-    .nav-cta {
-      padding: 0.5rem 1.25rem;
-      background: transparent;
-      border: 1px solid rgba(184, 115, 51, 0.45);
-      color: var(--copper-light);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-radius: 100px;
-      transition: all 0.3s var(--transition);
-    }
-    .nav-cta:hover {
-      background: var(--copper);
-      color: var(--navy-deep);
-      border-color: var(--copper);
-    }
-
-    /* ========== HERO ========== */
-    .hero {
-      min-height: 100vh;
-      min-height: 100dvh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8rem 2rem 5.5rem;
-      position: relative;
-      overflow: hidden;
-      background: 
-        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(27, 77, 62, 0.28) 0%, transparent 55%),
-        linear-gradient(165deg, var(--navy-deep) 0%, var(--green-deep) 50%, var(--navy) 100%);
-      text-align: center;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: 
-        radial-gradient(circle at 15% 85%, rgba(184, 115, 51, 0.06) 0%, transparent 35%),
-        radial-gradient(circle at 85% 20%, rgba(42, 107, 86, 0.12) 0%, transparent 30%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 780px;
-      opacity: 0;
-      transform: translateY(28px);
-      animation: heroIn 1.1s var(--transition) 0.15s forwards;
-    }
-
-    @keyframes heroIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Animated brand logo */
-    .hero-logo {
-      margin: 0 auto 2.25rem;
-      width: min(280px, 70vw);
-      opacity: 0;
-      transform: scale(0.92);
-      animation: logoReveal 1.2s var(--transition) 0.35s forwards;
-    }
-    .hero-logo img {
-      width: 100%;
-      height: auto;
-      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.25));
-    }
-    @keyframes logoReveal {
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--copper-light);
-      margin-bottom: 1.4rem;
-    }
-    .hero-eyebrow::before,
-    .hero-eyebrow::after {
-      content: '';
-      width: 22px; height: 1px;
-      background: var(--copper);
-      opacity: 0.65;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.6rem, 5vw, 4rem);
-      color: var(--ivory);
-      margin-bottom: 1.35rem;
-      font-weight: 600;
-    }
-    .hero h1 span {
-      display: block;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--copper-light);
-      font-size: 0.48em;
-      margin-top: 0.3em;
-      letter-spacing: 0.02em;
-    }
-
-    .hero-lead {
-      font-size: 1.15rem;
-      color: rgba(247, 243, 235, 0.78);
-      max-width: 560px;
-      margin: 0 auto 2.5rem;
-      font-weight: 300;
-      line-height: 1.75;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .btn-primary {
-      padding: 0.9rem 1.9rem;
-      background: var(--copper);
-      color: var(--navy-deep);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      border-radius: 100px;
-      transition: all 0.3s var(--transition);
-      box-shadow: 0 4px 18px rgba(184, 115, 51, 0.28);
-    }
-    .btn-primary:hover {
-      background: var(--copper-bright);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 26px rgba(184, 115, 51, 0.38);
-    }
-    .btn-ghost {
-      padding: 0.9rem 1.9rem;
-      background: transparent;
-      color: var(--ivory);
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      border-radius: 100px;
-      border: 1px solid rgba(247, 243, 235, 0.22);
-      transition: all 0.3s var(--transition);
-    }
-    .btn-ghost:hover {
-      border-color: var(--copper);
-      color: var(--copper-light);
-    }
-
-    .scroll-cue {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.45rem;
-      opacity: 0;
-      animation: fadeIn 1s 1.5s forwards;
-      z-index: 5;
-    }
-    .scroll-cue span {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(247, 243, 235, 0.4);
-    }
-    .scroll-line {
-      width: 1px;
-      height: 38px;
-      background: linear-gradient(to bottom, var(--copper), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.3; transform: scaleY(0.7); }
-      50% { opacity: 1; transform: scaleY(1); }
-    }
-    @keyframes fadeIn { to { opacity: 1; } }
-
-    /* ========== SECTIONS ========== */
-    section {
-      position: relative;
-      padding: 6.5rem 4rem;
-    }
-    .section-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-    section:not(.legacy) { overflow: hidden; }
-    section:not(.legacy)::after {
-      content: '';
-      position: absolute;
-      width: 30rem; height: 30rem;
-      right: -12rem; top: calc(50% - 15rem);
-      border-radius: 50%; pointer-events: none;
-      background: radial-gradient(circle, rgba(184, 115, 51, 0.07), transparent 68%);
-      transform: translate3d(0, calc(var(--scroll-shift, 0) * 1px), 0);
-      transition: transform 0.1s linear;
-    }
-    section:nth-of-type(even):not(.legacy)::after {
-      right: auto; left: -13rem;
-      background: radial-gradient(circle, rgba(42, 107, 86, 0.1), transparent 68%);
-    }
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--copper);
-      margin-bottom: 1.15rem;
-    }
-    .section-label::before {
-      content: '';
-      width: 16px; height: 1.5px;
-      background: var(--copper);
-    }
-    .section-title {
-      font-size: clamp(2.1rem, 3.6vw, 2.9rem);
-      margin-bottom: 1.3rem;
-      color: var(--ivory);
-    }
-    .section-lead {
-      font-size: 1.08rem;
-      color: rgba(247, 243, 235, 0.72);
-      max-width: 560px;
-      font-weight: 300;
-      line-height: 1.75;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(36px);
-      transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
-    }
-    .reveal-left { transform: translateX(-48px); }
-    .reveal-right { transform: translateX(48px); }
-    .reveal-scale { transform: translateY(24px) scale(0.96); }
-    .reveal.visible {
-      opacity: 1;
-      transform: translate3d(0, 0, 0) scale(1);
-    }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-
-    /* Platform */
-    .platform {
-      background: linear-gradient(180deg, var(--navy) 0%, #0A1A24 100%);
-    }
-    .platform-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem 3.5rem;
-      margin-top: 2.75rem;
-    }
-    .platform-stat {
-      border-top: 1px solid rgba(184, 115, 51, 0.22);
-      padding-top: 1.35rem;
-    }
-    .platform-stat h3 {
-      font-size: 1.55rem;
-      color: var(--copper-light);
-      margin-bottom: 0.45rem;
-    }
-    .platform-stat p {
-      font-size: 0.95rem;
-      color: rgba(247, 243, 235, 0.7);
-      line-height: 1.65;
-    }
-
-    /* Enterprise structure */
-    .structure {
-      background: linear-gradient(180deg, #0A1A24 0%, var(--navy-deep) 100%);
-    }
-    .structure-note {
-      margin-top: 2.5rem; padding: 1.2rem 1.4rem;
-      border: 1px solid rgba(184, 115, 51, 0.18); border-radius: var(--radius);
-      background: rgba(27, 77, 62, 0.14);
-      font-size: 0.9rem; color: rgba(247, 243, 235, 0.7); line-height: 1.7;
-    }
-
-
-    /* Meaning */
-    .meaning {
-      background: linear-gradient(180deg, var(--navy) 0%, var(--green-deep) 100%);
-    }
-    .meaning-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 3.5rem;
-      align-items: center;
-      margin-top: 2.5rem;
-    }
-    .meaning-note {
-      margin-top: 1.75rem;
-      padding: 1.2rem 1.4rem;
-      background: rgba(27, 77, 62, 0.22);
-      border-left: 3px solid var(--copper);
-      border-radius: 0 8px 8px 0;
-      font-size: 0.95rem;
-      color: rgba(247, 243, 235, 0.85);
-      line-height: 1.65;
-    }
-    .meaning-note strong {
-      color: var(--copper-light);
-      font-weight: 500;
-    }
-    .meaning-latin {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 2.6rem;
-      font-style: italic;
-      color: var(--copper-light);
-      letter-spacing: 0.04em;
-      text-align: center;
-      padding: 2rem 1.5rem;
-      border: 1px solid rgba(184, 115, 51, 0.2);
-      border-radius: var(--radius);
-      background: rgba(11, 28, 44, 0.4);
-    }
-    .meaning-latin span {
-      display: block;
-      font-size: 0.95rem;
-      font-style: normal;
-      font-family: 'Inter', sans-serif;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(247, 243, 235, 0.5);
-      margin-top: 0.6rem;
-    }
-    @media (max-width: 960px) {
-      .meaning-grid { grid-template-columns: 1fr; gap: 2rem; }
-    }
-
-    /* Mission / Vision */
-    .mission-vision {
-      background: linear-gradient(180deg, var(--green-deep) 0%, var(--navy) 55%, var(--navy-deep) 100%);
-    }
-    .mv-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .mv-card {
-      background: rgba(11, 28, 44, 0.5);
-      border: 1px solid rgba(184, 115, 51, 0.14);
-      border-radius: var(--radius);
-      padding: 2.1rem;
-      transition: border-color 0.35s, transform 0.35s var(--transition);
-    }
-    .mv-card:hover {
-      border-color: rgba(184, 115, 51, 0.32);
-      transform: translateY(-3px);
-    }
-    .mv-card h3 {
-      font-size: 1.4rem;
-      color: var(--copper-light);
-      margin-bottom: 0.8rem;
-    }
-    .mv-card p {
-      color: rgba(247, 243, 235, 0.78);
-      font-size: 0.98rem;
-      line-height: 1.7;
-    }
-
-    /* Values */
-    .values {
-      background: var(--ivory);
-      color: var(--text-dark);
-    }
-    .values .section-label { color: var(--green); }
-    .values .section-label::before { background: var(--green); }
-    .values .section-title { color: var(--navy); }
-    .values .section-lead { color: var(--text-muted); }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.15rem;
-      margin-top: 3rem;
-    }
-    .value-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 1.6rem 1.4rem;
-      box-shadow: 0 2px 14px rgba(11, 28, 44, 0.05);
-      border: 1px solid rgba(27, 77, 62, 0.07);
-      transition: all 0.35s var(--transition);
-      min-height: 150px;
-    }
-    .value-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 24px rgba(11, 28, 44, 0.09);
-      border-color: rgba(27, 77, 62, 0.16);
-    }
-    .value-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 600;
-      color: rgba(27, 77, 62, 0.13);
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-    .value-card h4 {
-      font-size: 1.15rem;
-      color: var(--navy);
-      margin-bottom: 0.35rem;
-    }
-    .value-card p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-
-    /* Philosophy */
-    .philosophy {
-      background: linear-gradient(180deg, var(--green-deep) 0%, var(--navy) 100%);
-    }
-    .phil-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.35rem;
-      margin-top: 3rem;
-    }
-    .phil-card {
-      background: rgba(11, 28, 44, 0.42);
-      border: 1px solid rgba(184, 115, 51, 0.12);
-      border-radius: var(--radius);
-      padding: 1.85rem 1.45rem;
-      text-align: center;
-      transition: all 0.35s var(--transition);
-    }
-    .phil-card:hover {
-      background: rgba(27, 77, 62, 0.2);
-      border-color: rgba(184, 115, 51, 0.28);
-      transform: translateY(-3px);
-    }
-    .phil-icon {
-      width: 44px;
-      height: 44px;
-      margin: 0 auto 1rem;
-      border-radius: 10px;
-      background: linear-gradient(145deg, rgba(184, 115, 51, 0.16), rgba(27, 77, 62, 0.26));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.15rem;
-      color: var(--copper-light);
-    }
-    .phil-card h4 {
-      font-size: 1.15rem;
-      color: var(--ivory);
-      margin-bottom: 0.55rem;
-    }
-    .phil-card p {
-      font-size: 0.88rem;
-      color: rgba(247, 243, 235, 0.68);
-      line-height: 1.6;
-    }
-
-    /* Legacy CTA */
-    .legacy {
-      background: var(--navy-deep);
-      text-align: center;
-      padding: 7rem 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .legacy::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: 
-        radial-gradient(circle at 50% 0%, rgba(27, 77, 62, 0.22) 0%, transparent 45%),
-        radial-gradient(circle at 50% 100%, rgba(184, 115, 51, 0.05) 0%, transparent 35%);
-      pointer-events: none;
-    }
-    .legacy .section-title {
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .legacy .section-lead {
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 2rem;
-    }
-    .legacy-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.3rem, 2.1vw, 1.65rem);
-      font-style: italic;
-      color: var(--copper-light);
-      max-width: 540px;
-      margin: 0 auto 2.25rem;
-      line-height: 1.5;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--navy-deep);
-      border-top: 1px solid rgba(184, 115, 51, 0.1);
-      padding: 3rem 4rem 1.6rem;
-    }
-    .footer-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 2.25rem;
-    }
-    .footer-mark { display: flex; align-items: center; gap: 0.55rem; margin-bottom: 0.85rem; }
-    .footer-brand p {
-      font-size: 0.85rem;
-      color: rgba(247, 243, 235, 0.48);
-      max-width: 240px;
-      line-height: 1.55;
-    }
-    .footer-col h5 {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--copper);
-      margin-bottom: 1rem;
-    }
-    .footer-col ul { list-style: none; }
-    .footer-col li { margin-bottom: 0.45rem; }
-    .footer-col a {
-      font-size: 0.85rem;
-      color: rgba(247, 243, 235, 0.58);
-      transition: color 0.25s;
-    }
-    .footer-col a:hover { color: var(--copper-light); }
-    .footer-bottom {
-      max-width: 1080px;
-      margin: 2.25rem auto 0;
-      padding-top: 1.25rem;
-      border-top: 1px solid rgba(247, 243, 235, 0.06);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.72rem;
-      color: rgba(247, 243, 235, 0.32);
-    }
-    .footer-bottom a {
-      color: rgba(247, 243, 235, 0.4);
-      margin-left: 1.25rem;
-      transition: color 0.25s;
-    }
-    .footer-bottom a:hover { color: var(--copper-light); }
-
-    /* Responsive */
-    @media (max-width: 960px) {
-      .nav { flex-wrap: wrap; row-gap: 0.65rem; }
-      .nav-links {
-        display: flex; order: 3; width: 100%; gap: 1.15rem;
-        overflow-x: auto; padding: 0.25rem 0 0.1rem; scrollbar-width: none;
-      }
-      .nav-links::-webkit-scrollbar { display: none; }
-      .nav-links li { flex: 0 0 auto; }
-      section { padding: 4.5rem 1.75rem; }
-      .platform-grid, .mv-grid, .phil-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .footer-inner { grid-template-columns: 1fr 1fr; gap: 1.75rem; }
-      .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
-    }
-
-    /* ========== SCROLL PROGRESS ========== */
-    .scroll-progress {
-      position: fixed; top: 0; left: 0; height: 2px; width: 0;
-      background: linear-gradient(90deg, var(--green-light), var(--copper));
-      z-index: 200; pointer-events: none;
-      box-shadow: 0 0 12px rgba(184, 115, 51, 0.35);
-    }
-
-    /* ========== LIVE-TYPE BRAND LOCKUP ========== */
-    .hero-logo { width: auto; animation: none; opacity: 1; transform: none; }
-    .brand-lockup { display: inline-flex; flex-direction: column; align-items: center; }
-    .logo-word {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 600; font-size: clamp(3rem, 7.5vw, 4.6rem);
-      letter-spacing: 0.14em; color: var(--ivory); line-height: 1;
-      display: flex; text-indent: 0.14em;
-    }
-    .logo-word .lc {
-      display: inline-block; opacity: 0;
-      transform: translateY(0.38em); filter: blur(7px);
-      animation: letterIn 0.9s var(--transition) forwards;
-    }
-    @keyframes letterIn { to { opacity: 1; transform: translateY(0); filter: blur(0); } }
-    .logo-word .i-leaf { position: relative; }
-    .logo-leaf {
-      position: absolute; left: 50%; top: -0.52em;
-      width: 0.62em; height: 0.62em; transform: translateX(-50%);
-    }
-    .logo-leaf .leaf-stroke {
-      fill: none; stroke: var(--copper-light); stroke-width: 2;
-      stroke-linecap: round; stroke-linejoin: round;
-      stroke-dasharray: 1; stroke-dashoffset: 1;
-      animation: leafDraw 1.1s var(--transition) 0.25s forwards;
-    }
-    .logo-leaf .leaf-fill {
-      fill: var(--copper-light); opacity: 0;
-      animation: leafFill 0.7s ease 1.05s forwards;
-    }
-    @keyframes leafDraw { to { stroke-dashoffset: 0; } }
-    @keyframes leafFill { to { opacity: 1; } }
-    .logo-sub {
-      font-family: 'Inter', sans-serif; font-weight: 500;
-      font-size: clamp(0.8rem, 1.7vw, 1.02rem);
-      text-transform: uppercase; color: var(--copper-light);
-      letter-spacing: 0.55em; text-indent: 0.55em;
-      margin-top: 0.55rem; opacity: 0;
-      animation: subIn 1s var(--transition) 1.15s forwards;
-    }
-    @keyframes subIn {
-      from { opacity: 0; letter-spacing: 0.7em; }
-      to { opacity: 1; letter-spacing: 0.34em; }
-    }
-    .logo-rule {
-      width: 0; height: 1px; margin-top: 1.1rem;
-      background: linear-gradient(90deg, transparent, var(--copper), transparent);
-      animation: ruleGrow 0.9s var(--transition) 1.35s forwards;
-    }
-    @keyframes ruleGrow { to { width: 150px; } }
-
-    /* sequenced hero cascade after the lockup */
-    .hero-eyebrow, .hero h1, .hero-lead, .hero-actions {
-      opacity: 0; transform: translateY(20px);
-      animation: heroRise 0.9s var(--transition) forwards;
-    }
-    .hero h1 { animation-delay: 1.5s; }
-    .hero-lead { animation-delay: 1.64s; }
-    .hero-actions { animation-delay: 1.78s; }
-    @keyframes heroRise { to { opacity: 1; transform: translateY(0); } }
-
-    /* ========== SCROLL-DRIVEN REFINEMENTS ========== */
-    .section-label::before { transform: scaleX(0); transform-origin: left; transition: transform 0.7s var(--transition) 0.2s; }
-    .reveal.visible .section-label::before,
-    .visible .section-label::before { transform: scaleX(1); }
-
-    .platform-stat { border-top: none; position: relative; }
-    .platform-stat::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: rgba(184, 115, 51, 0.28);
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 0.9s var(--transition) 0.25s;
-    }
-    .platform-stat.visible::before { transform: scaleX(1); }
-    .platform-stat { padding-top: 1.35rem; }
-
-    [data-parallax] { will-change: transform; }
-
-    .nav-links a.active { color: var(--ivory); }
-    .nav-links a.active::after { width: 100%; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.001s !important;
-        animation-delay: 0s !important;
-        transition-duration: 0.001s !important;
-      }
-      .reveal { opacity: 1; transform: none; }
-      [data-parallax] { transform: none !important; }
-    }
-
-    @media (max-width: 600px) {
-      .values-grid { grid-template-columns: 1fr; }
-      .nav { padding: 0.95rem 1.2rem; }
-      .nav.scrolled { padding: 0.65rem 1.2rem; }
-      .hero { padding: 9rem 1.4rem 4.5rem; }
-      .footer-inner { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="preload" href="fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="site.css" />
 </head>
 <body>
-  <div class="scroll-progress" id="scrollProgress"></div>
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <a href="index.html" class="nav-logo" aria-label="Vireilo Ventures">
-      <svg class="nav-leaf" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 36 C20 28 20 22 20 16" stroke="#D4A574" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M20 18 C17 10 20 4 20 2 C20 4 23 10 20 18 Z M19 21 C12 19 8 13 8 9 C13 10 18 14 19 21 Z M21 21 C28 19 32 13 32 9 C27 10 22 14 21 21 Z" fill="#D4A574"/></svg>
-      <span class="nav-word">Vireilo</span>
-      <span class="nav-sub">Ventures</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#meaning">Meaning</a></li>
-      <li><a href="#mission">Mission</a></li>
-      <li><a href="#values">Values</a></li>
-      <li><a href="#philosophy">Philosophy</a></li>
-      <li><a href="#structure">Structure</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a href="https://dash.vireilo.com" target="_blank" rel="noopener" class="nav-cta" id="login-link" title="Operator console — authorized access">Dashboard</a>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" id="progress"></div>
+  <nav class="nav" id="nav" aria-label="Primary">
+    <a href="index.html" class="nav-logo" aria-label="Vireilo Ventures, home"><span class="wm" aria-hidden="true">VIRE<span class="il">I<svg class="leaf" viewBox="0 0 40 40" aria-hidden="true"><path class="stem" pathLength="1" d="M20 36 C20 28 20 22 20 16"/><path class="blade b1" d="M20 18 C17 10 20 4 20 2 C20 4 23 10 20 18 Z"/><path class="blade b2" d="M19 21 C12 19 8 13 8 9 C13 10 18 14 19 21 Z"/><path class="blade b3" d="M21 21 C28 19 32 13 32 9 C27 10 22 14 21 21 Z"/></svg></span>LO</span><small>Ventures</small></a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#meaning">Meaning</a>
+      <a href="#mission">Mission</a>
+      <a href="#values">Values</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#structure">Structure</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://dash.vireilo.com" target="_blank" rel="noopener" class="dash" id="login-link" title="Operator console — authorized access">Dashboard</a>
+    </div>
   </nav>
 
-  <!-- HERO -->
   <header class="hero">
-    <div class="hero-content">
-      <div class="hero-logo brand-lockup" role="img" aria-label="Vireilo Ventures">
-        <div class="logo-word">
-          <span class="lc" style="animation-delay:.35s">V</span><span class="lc" style="animation-delay:.42s">I</span><span class="lc" style="animation-delay:.49s">R</span><span class="lc" style="animation-delay:.56s">E</span><span class="lc i-leaf" style="animation-delay:.63s">I<svg class="logo-leaf" viewBox="0 0 40 40" aria-hidden="true"><path class="leaf-stroke" pathLength="1" d="M20 36 C20 28 20 22 20 16"/><path class="leaf-stroke" pathLength="1" d="M20 18 C17 10 20 4 20 2 C20 4 23 10 20 18 Z"/><path class="leaf-stroke" pathLength="1" d="M19 21 C12 19 8 13 8 9 C13 10 18 14 19 21 Z"/><path class="leaf-stroke" pathLength="1" d="M21 21 C28 19 32 13 32 9 C27 10 22 14 21 21 Z"/><path class="leaf-fill" d="M20 18 C17 10 20 4 20 2 C20 4 23 10 20 18 Z M19 21 C12 19 8 13 8 9 C13 10 18 14 19 21 Z M21 21 C28 19 32 13 32 9 C27 10 22 14 21 21 Z"/></svg></span><span class="lc" style="animation-delay:.70s">L</span><span class="lc" style="animation-delay:.77s">O</span>
-        </div>
-        <div class="logo-sub">Ventures</div>
-        <div class="logo-rule"></div>
+    <div class="hero-main" id="main">
+      <div>
+        <h1><span>Own.</span><span>Operate.</span><span>Scale.</span></h1>
+        <p class="sub">Technology-enabled economic development</p>
       </div>
-      <!-- original raster mark, kept for easy revert:
-      <div class="hero-logo"><img src="assets/logo-brand.png" alt="Vireilo Ventures" /></div> -->
-      <h1>
-        Own. Operate. Scale.
-        <span>Technology-enabled economic development</span>
-      </h1>
-      <p class="hero-lead">
-        Vireilo Ventures acquires, develops, owns, and operates businesses and real assets across the Midwest through disciplined capital allocation, shared systems, and long-term stewardship.
-      </p>
-      <div class="hero-actions">
-        <a href="#platform" class="btn-primary">Explore the Platform</a>
-        <a href="contact.html" class="btn-ghost">Contact</a>
+      <div class="lockup" role="img" aria-label="Vireilo Ventures">
+        <span class="wm" aria-hidden="true"><span class="ch" style="--d:4;--s:-4">V</span><span class="ch" style="--d:3;--s:-3">I</span><span class="ch" style="--d:2;--s:-2">R</span><span class="ch" style="--d:1;--s:-1">E</span><span class="ch il" style="--d:0;--s:0">I<svg class="leaf" viewBox="0 0 40 40" aria-hidden="true"><path class="stem" pathLength="1" d="M20 36 C20 28 20 22 20 16"/><path class="blade b1" d="M20 18 C17 10 20 4 20 2 C20 4 23 10 20 18 Z"/><path class="blade b2" d="M19 21 C12 19 8 13 8 9 C13 10 18 14 19 21 Z"/><path class="blade b3" d="M21 21 C28 19 32 13 32 9 C27 10 22 14 21 21 Z"/></svg></span><span class="ch" style="--d:1;--s:1">L</span><span class="ch" style="--d:2;--s:2">O</span></span>
+        <span class="ventures" aria-hidden="true">Ventures</span>
+        <span class="rule" aria-hidden="true"></span>
       </div>
     </div>
-    <div class="scroll-cue">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+    <div class="band">
+      <div class="band-in">
+        <p>Vireilo Ventures acquires, develops, owns, and operates businesses and real assets across the Midwest through disciplined capital allocation, shared systems, and long-term stewardship.</p>
+        <div class="actions">
+          <a href="#platform" class="btn btn-dark">Explore the platform</a>
+          <a href="contact.html" class="text-link">Contact</a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- PLATFORM -->
-  <section class="platform" id="platform">
-    <div class="section-inner">
-      <div class="reveal">
-        <div class="section-label">Positioning</div>
-        <h2 class="section-title">An enterprise platform for ownership and operation</h2>
-        <p class="section-lead">
-          Not a passive holding company. Not a pure real estate developer. Vireilo is a technology-enabled platform focused on the Midwest that owns PropCos and OpCos, operates them with institutional discipline, and scales through shared systems and capital.
-        </p>
+  <main>
+  <section class="sec platform dark" id="platform">
+    <div class="in">
+      <div class="head">
+        <h2>An enterprise platform for ownership and operation</h2>
+        <p class="lead">Not a passive holding company. Not a pure real estate developer. Vireilo is a technology-enabled platform focused on the Midwest. It owns property companies and operating companies, runs them with institutional discipline, and scales through shared systems and capital.</p>
       </div>
-      <div class="platform-grid">
-        <div class="platform-stat reveal reveal-left reveal-delay-1">
-          <h3>Own</h3>
-          <p>We acquire and hold durable businesses and real assets that generate recurring cash flow and resist short-term cycles.</p>
-        </div>
-        <div class="platform-stat reveal reveal-right reveal-delay-2">
-          <h3>Operate</h3>
-          <p>Active operational oversight across entities — finance, systems, talent, and capital allocation — under a unified platform.</p>
-        </div>
-        <div class="platform-stat reveal reveal-left reveal-delay-1">
-          <h3>Scale</h3>
-          <p>Shared infrastructure, technology, and process that multiply capacity without proportional complexity or headcount.</p>
-        </div>
-        <div class="platform-stat reveal reveal-right reveal-delay-2">
-          <h3>Steward</h3>
-          <p>Decisions oriented toward multi-decade outcomes and the communities and operators who will inherit the enterprise.</p>
+      <ul class="verbs">
+        <li><h3>Own</h3><p>We acquire and hold durable businesses and real assets that generate recurring cash flow and resist short-term cycles.</p></li>
+        <li><h3>Operate</h3><p>Active operational oversight across entities, covering finance, systems, talent, and capital allocation, under one platform.</p></li>
+        <li><h3>Scale</h3><p>Shared infrastructure, technology, and process that multiply capacity without proportional complexity or headcount.</p></li>
+        <li><h3>Steward</h3><p>Decisions oriented toward multi-decade outcomes and the communities and operators who will inherit the enterprise.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec meaning dark" id="meaning">
+    <div class="in">
+      <p class="latin" aria-hidden="true">virere</p>
+      <div class="cols">
+        <h2>From the Latin <em>virere</em>, to flourish</h2>
+        <div class="txt">
+          <p>Vireilo is a coined name inspired by the Latin <em>virere</em>, meaning to flourish. It stands for enduring growth, stewardship, and enterprise: platforms and assets designed to outlast their founders.</p>
+          <p><em>Virere</em> is not growth for growth’s sake. It is the deliberate cultivation of systems, capital, and culture that compound quietly over decades.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MEANING -->
-  <section class="meaning" id="meaning">
-    <div class="section-inner">
-      <div class="reveal">
-        <div class="section-label">Brand Meaning</div>
-        <h2 class="section-title">From the Latin <em>virere</em> — to flourish</h2>
+  <section class="sec on-light" id="mission">
+    <div class="in">
+      <div class="head">
+        <h2>Mission &amp; Vision</h2>
+        <p class="lead">Clear direction. Measured ambition. Institutional posture.</p>
       </div>
-      <div class="meaning-grid">
-        <div class="reveal reveal-left reveal-delay-1">
-          <p class="section-lead" style="max-width: none;">
-            Vireilo is a coined name inspired by the Latin <em>virere</em>, meaning to flourish. It represents enduring growth, stewardship, and enterprise — platforms and assets designed to outlast their founders.
-          </p>
-          <div class="meaning-note">
-            <strong>Virere</strong> is not growth for growth’s sake. It is the deliberate cultivation of systems, capital, and culture that compound quietly over decades.
-          </div>
-        </div>
-        <div class="reveal reveal-right reveal-delay-2">
-          <div class="meaning-latin" data-parallax>
-            virere
-            <span>to flourish</span>
-          </div>
-        </div>
+      <div class="mv">
+        <div><h3>Mission</h3><p>To build an enduring Midwest enterprise through disciplined capital allocation, operational excellence, and technology-enabled systems that support ownership and growth across multiple businesses and assets.</p></div>
+        <div><h3>Vision</h3><p>To become one of the most respected diversified private enterprises: a platform that owns and operates durable businesses and real assets with clarity, accountability, and long-term orientation.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- MISSION & VISION -->
-  <section class="mission-vision" id="mission">
-    <div class="section-inner">
-      <div class="reveal">
-        <div class="section-label">Purpose</div>
-        <h2 class="section-title">Mission &amp; Vision</h2>
-        <p class="section-lead">Clear direction. Measured ambition. Institutional posture.</p>
+  <section class="sec values" id="values">
+    <div class="in">
+      <div class="head">
+        <h2>Principles that govern decisions</h2>
+        <p class="lead">Seven commitments that keep the enterprise grounded, accountable, and oriented toward the long term.</p>
       </div>
-      <div class="mv-grid">
-        <div class="mv-card reveal reveal-left reveal-delay-1">
-          <h3>Mission</h3>
-          <p>To build an enduring Midwest enterprise through disciplined capital allocation, operational excellence, and technology-enabled systems that support ownership and growth across multiple businesses and assets.</p>
-        </div>
-        <div class="mv-card reveal reveal-right reveal-delay-2">
-          <h3>Vision</h3>
-          <p>To become one of the most respected diversified private enterprises — a platform that owns and operates durable businesses and real assets with clarity, accountability, and long-term orientation.</p>
-        </div>
-      </div>
+      <ul class="vals">
+        <li><h3>Stewardship</h3><p>We hold assets and relationships in trust for the next generation of operators and communities.</p></li>
+        <li><h3>Integrity</h3><p>Clear communication, accurate numbers, and decisions we can stand behind years later.</p></li>
+        <li><h3>Excellence</h3><p>Operational discipline and craft in every property company, operating company, and system we touch.</p></li>
+        <li><h3>Ownership</h3><p>Skin in the game. We own outcomes, good and bad, and design incentives accordingly.</p></li>
+        <li><h3>Curiosity</h3><p>Continuous learning across capital markets, operations, technology, and human systems.</p></li>
+        <li><h3>Simplicity</h3><p>Complexity is a tax. We prefer elegant systems and clear structures over clever ones.</p></li>
+        <li><h3>Long-Term Thinking</h3><p>We optimize for decade-scale outcomes, not quarterly optics or vanity metrics.</p></li>
+      </ul>
     </div>
   </section>
 
-  <!-- VALUES -->
-  <section class="values" id="values">
-    <div class="section-inner">
-      <div class="reveal">
-        <div class="section-label">Core Values</div>
-        <h2 class="section-title">Principles that govern decisions</h2>
-        <p class="section-lead">Seven commitments that keep the enterprise grounded, accountable, and oriented toward the long term.</p>
+  <section class="sec philosophy dark" id="philosophy">
+    <div class="in">
+      <div class="head">
+        <h2>Own what endures</h2>
+        <p class="lead">We seek durable businesses and assets with recurring cash flow, scalable systems, and genuine community impact.</p>
       </div>
-      <div class="values-grid">
-        <div class="value-card reveal reveal-scale">
-          <div class="value-num">01</div>
-          <h4>Stewardship</h4>
-          <p>We hold assets and relationships in trust for the next generation of operators and communities.</p>
-        </div>
-        <div class="value-card reveal reveal-scale reveal-delay-1">
-          <div class="value-num">02</div>
-          <h4>Integrity</h4>
-          <p>Clear communication, accurate numbers, and decisions we can stand behind years later.</p>
-        </div>
-        <div class="value-card reveal reveal-scale reveal-delay-2">
-          <div class="value-num">03</div>
-          <h4>Excellence</h4>
-          <p>Operational discipline and craft in every PropCo, OpCo, and system we touch.</p>
-        </div>
-        <div class="value-card reveal reveal-scale">
-          <div class="value-num">04</div>
-          <h4>Ownership</h4>
-          <p>Skin in the game. We own outcomes — good and bad — and design incentives accordingly.</p>
-        </div>
-        <div class="value-card reveal reveal-scale reveal-delay-1">
-          <div class="value-num">05</div>
-          <h4>Curiosity</h4>
-          <p>Continuous learning across capital markets, operations, technology, and human systems.</p>
-        </div>
-        <div class="value-card reveal reveal-scale reveal-delay-2">
-          <div class="value-num">06</div>
-          <h4>Simplicity</h4>
-          <p>Complexity is a tax. We prefer elegant systems and clear structures over clever ones.</p>
-        </div>
-        <div class="value-card reveal reveal-scale reveal-delay-3">
-          <div class="value-num">07</div>
-          <h4>Long-Term Thinking</h4>
-          <p>We optimize for decade-scale outcomes, not quarterly optics or vanity metrics.</p>
-        </div>
-      </div>
+      <ul class="three">
+        <li><h3>Durable Assets</h3><p>Real estate and operating businesses that generate predictable cash flow and resist obsolescence.</p></li>
+        <li><h3>Scalable Systems</h3><p>Technology and process that let operators multiply output without proportional headcount or complexity.</p></li>
+        <li><h3>Community Impact</h3><p>Projects that strengthen the places they inhabit: mixed-use development, local employment, long-term stewardship.</p></li>
+      </ul>
     </div>
   </section>
 
-  <!-- PHILOSOPHY -->
-  <section class="philosophy" id="philosophy">
-    <div class="section-inner">
-      <div class="reveal">
-        <div class="section-label">Investment Philosophy</div>
-        <h2 class="section-title">Own what endures</h2>
-        <p class="section-lead">We seek durable businesses and assets with recurring cash flow, scalable systems, and genuine community impact.</p>
+  <section class="sec structure dark" id="structure">
+    <div class="in">
+      <div class="head">
+        <h2>Distinct entities. Clear responsibilities.</h2>
+        <p class="lead">The Vireilo enterprise uses separate legal entities with defined roles across ownership, management, and operations.</p>
       </div>
-      <div class="phil-grid">
-        <div class="phil-card reveal reveal-left">
-          <div class="phil-icon">▣</div>
-          <h4>Durable Assets</h4>
-          <p>Real estate and operating businesses that generate predictable cash flow and resist obsolescence.</p>
-        </div>
-        <div class="phil-card reveal reveal-scale reveal-delay-1">
-          <div class="phil-icon">⬡</div>
-          <h4>Scalable Systems</h4>
-          <p>Technology and process that let operators multiply output without proportional headcount or complexity.</p>
-        </div>
-        <div class="phil-card reveal reveal-right reveal-delay-2">
-          <div class="phil-icon">◎</div>
-          <h4>Community Impact</h4>
-          <p>Projects that strengthen the places they inhabit — mixed-use development, local employment, long-term stewardship.</p>
-        </div>
-      </div>
+      <ul class="two">
+        <li><h3>Vireilo Ventures LLC</h3><p>A separate legal entity associated with the Vireilo Ventures enterprise platform and its long-term ownership orientation.</p></li>
+        <li><h3>Vireilo Management LLC</h3><p>The management arm of Vireilo Ventures LLC. It is publicly identified as Vireilo Ventures Management and is the registered operator of the conversational and operational SMS program.</p></li>
+      </ul>
+      <p class="note">Vireilo Management LLC is a separate legal entity serving as the management arm of Vireilo Ventures LLC. “Vireilo Ventures Management” is its public-facing designation. SMS communications described on this website are administered solely by Vireilo Management LLC.</p>
     </div>
   </section>
 
-  <!-- ENTERPRISE STRUCTURE -->
-  <section class="structure" id="structure">
-    <div class="section-inner">
-      <div class="reveal">
-        <div class="section-label">Enterprise Structure</div>
-        <h2 class="section-title">Distinct entities. Clear responsibilities.</h2>
-        <p class="section-lead">
-          The Vireilo enterprise uses separate legal entities with defined roles across ownership, management, and operations.
-        </p>
+  <section class="sec close" id="legacy">
+    <div class="in">
+      <div>
+        <h2>Build enterprises that outlast founders</h2>
+        <blockquote>“We are not building a personal brand. We are building an enterprise that can be owned, operated, and scaled by those who come after us.”</blockquote>
       </div>
-      <div class="platform-grid">
-        <div class="platform-stat reveal reveal-left reveal-delay-1">
-          <h3>Vireilo Ventures LLC</h3>
-          <p>A separate legal entity associated with the Vireilo Ventures enterprise platform and its long-term ownership orientation.</p>
-        </div>
-        <div class="platform-stat reveal reveal-right reveal-delay-2">
-          <h3>Vireilo Management LLC</h3>
-          <p>The management arm of Vireilo Ventures LLC. It is publicly identified as Vireilo Ventures Management and is the registered operator of the conversational and operational SMS program.</p>
-        </div>
-      </div>
-      <p class="structure-note reveal">
-        Vireilo Management LLC is a separate legal entity serving as the management arm of Vireilo Ventures LLC. “Vireilo Ventures Management” is its public-facing designation. SMS communications described on this website are administered solely by Vireilo Management LLC.
-      </p>
-    </div>
-  </section>
-
-  <!-- LEGACY CTA -->
-  <section class="legacy" id="legacy">
-    <div class="section-inner reveal">
-      <div class="section-label">Legacy</div>
-      <h2 class="section-title">Build enterprises that outlast founders</h2>
-      <p class="legacy-quote">
-        “We are not building a personal brand. We are building an enterprise that can be owned, operated, and scaled by those who come after us.”
-      </p>
-      <p class="section-lead">
-        Vireilo Ventures exists to create enduring value through disciplined ownership, operational excellence, and systems that multiply human judgment.
-      </p>
-      <div class="hero-actions" style="justify-content: center;">
-        <a href="contact.html" class="btn-primary">Start a Conversation</a>
+      <div>
+        <p>Vireilo Ventures exists to create enduring value through disciplined ownership, operational excellence, and systems that multiply human judgment.</p>
+        <a href="contact.html" class="btn btn-dark">Start a conversation</a>
       </div>
     </div>
   </section>
+  </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="footer-mark"><svg class="nav-leaf" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 36 C20 28 20 22 20 16" stroke="#D4A574" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M20 18 C17 10 20 4 20 2 C20 4 23 10 20 18 Z M19 21 C12 19 8 13 8 9 C13 10 18 14 19 21 Z M21 21 C28 19 32 13 32 9 C27 10 22 14 21 21 Z" fill="#D4A574"/></svg><span class="nav-word">Vireilo</span><span class="nav-sub">Ventures</span></div>
-        <p>Technology-enabled enterprise platform. Own. Operate. Scale.<br />Vireilo Management LLC is the management arm of Vireilo Ventures LLC and is publicly identified as Vireilo Ventures Management.</p>
+  <footer class="foot">
+    <div class="foot-in">
+      <div>
+        <span class="wm" aria-hidden="true">VIRE<span class="il">I<svg class="leaf" viewBox="0 0 40 40" aria-hidden="true"><path class="stem" pathLength="1" d="M20 36 C20 28 20 22 20 16"/><path class="blade b1" d="M20 18 C17 10 20 4 20 2 C20 4 23 10 20 18 Z"/><path class="blade b2" d="M19 21 C12 19 8 13 8 9 C13 10 18 14 19 21 Z"/><path class="blade b3" d="M21 21 C28 19 32 13 32 9 C27 10 22 14 21 21 Z"/></svg></span>LO</span>
+        <p class="about">Technology-enabled enterprise platform. Own. Operate. Scale.<br />Vireilo Management LLC is the management arm of Vireilo Ventures LLC and is publicly identified as Vireilo Ventures Management.</p>
       </div>
-      <div class="footer-col">
-        <h5>Platform</h5>
+      <div>
+        <h2>Platform</h2>
         <ul>
           <li><a href="#platform">Positioning</a></li>
           <li><a href="#meaning">Brand Meaning</a></li>
@@ -1073,8 +180,8 @@
           <li><a href="#values">Core Values</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h5>Company</h5>
+      <div>
+        <h2>Company</h2>
         <ul>
           <li><a href="#philosophy">Investment Approach</a></li>
           <li><a href="#legacy">Legacy</a></li>
@@ -1082,8 +189,8 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h5>Legal</h5>
+      <div>
+        <h2>Legal</h2>
         <ul>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
@@ -1091,81 +198,9 @@
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Vireilo Ventures LLC. Vireilo Ventures Management is the public-facing designation of Vireilo Management LLC.</span>
-      <span>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="sms-consent.html">SMS Opt-In</a>
-        <a href="contact.html">Contact</a>
-      </span>
-    </div>
+    <div class="foot-base">© 2026 Vireilo Ventures LLC. Vireilo Ventures Management is the public-facing designation of Vireilo Management LLC.</div>
   </footer>
 
-  <script>
-    const nav = document.getElementById('nav');
-    const progress = document.getElementById('scrollProgress');
-    const heroContent = document.querySelector('.hero-content');
-    const scrollCue = document.querySelector('.scroll-cue');
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const parallaxEls = reduceMotion ? [] : [...document.querySelectorAll('[data-parallax]')];
-    const scrollSections = reduceMotion ? [] : [...document.querySelectorAll('section:not(.legacy)')];
-
-    let ticking = false;
-    function onScroll() {
-      const y = window.scrollY;
-      nav.classList.toggle('scrolled', y > 40);
-      const max = document.documentElement.scrollHeight - innerHeight;
-      if (progress) progress.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
-      if (heroContent && !reduceMotion && y < innerHeight) {
-        heroContent.style.transform = `translateY(${y * 0.16}px)`;
-        heroContent.style.opacity = String(1 - Math.min(y / (innerHeight * 0.85), 1) * 0.9);
-      }
-      if (scrollCue) {
-        scrollCue.style.opacity = String(Math.max(0, 1 - y / 220));
-      }
-      for (const el of parallaxEls) {
-        const r = el.getBoundingClientRect();
-        const off = (r.top + r.height / 2 - innerHeight / 2) * -0.06;
-        el.style.transform = `translateY(${off.toFixed(1)}px)`;
-      }
-      for (const section of scrollSections) {
-        const r = section.getBoundingClientRect();
-        const centerOffset = r.top + r.height / 2 - innerHeight / 2;
-        const shift = Math.max(-36, Math.min(36, centerOffset * -0.035));
-        section.style.setProperty('--scroll-shift', shift.toFixed(1));
-      }
-      ticking = false;
-    }
-    window.addEventListener('scroll', () => {
-      if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
-    }, { passive: true });
-    onScroll();
-
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-    revealEls.forEach(el => observer.observe(el));
-
-    // scrollspy — copper underline follows the reader
-    const spyLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
-    const spyMap = spyLinks.map(a => [document.querySelector(a.getAttribute('href')), a]).filter(([s]) => s);
-    const spy = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        const link = spyMap.find(([s]) => s === e.target)?.[1];
-        if (link && e.isIntersecting) {
-          spyLinks.forEach(a => a.classList.remove('active'));
-          link.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-    spyMap.forEach(([s]) => spy.observe(s));
-  </script>
+  <script src="site.js" defer></script>
 </body>
 </html>

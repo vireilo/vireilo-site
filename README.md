@@ -7,7 +7,9 @@ Netlify.
 
 Hand-authored static HTML — not build output. There is no bundler, no framework, and no
 build step: what is in this repo is byte-for-byte what Netlify serves. Edit the `.html`
-files directly.
+files directly. Every page shares one stylesheet (`site.css`) and one small script
+(`site.js`); the navigation and footer markup are repeated in each page, so a change to
+either must be made in all eight `.html` files.
 
 ## Provenance
 
@@ -30,6 +32,9 @@ check which was edited last, because a Netlify-side edit would not appear here.
 | `404.html` | Netlify's not-found page (served automatically) |
 | `_headers` | Netlify response headers — security headers plus asset caching |
 | `robots.txt`, `sitemap.xml` | Crawler directives |
+| `site.css`, `site.js` | Shared styles and behaviour (nav state, mobile menu, scroll progress) |
+| `fonts/` | Self-hosted Archivo and Cormorant Garamond (SIL Open Font License); no third-party font requests |
+| `DESIGN.md` | The visual system: colours, type, components, motion |
 | `assets/` | `logo-nav.png`, `logo-brand.png`, `og.png` (social card) |
 
 ## Forms
@@ -44,7 +49,7 @@ zero secret-shaped strings across all HTML.
 `_headers` sets `X-Content-Type-Options: nosniff`,
 `Referrer-Policy: strict-origin-when-cross-origin`, `X-Frame-Options: SAMEORIGIN`, and
 `Permissions-Policy: camera=(), microphone=(), geolocation=()` site-wide, plus a
-one-year immutable cache on `/assets/*`. Changing a logo therefore requires a new
+one-year immutable cache on `/assets/*` and `/fonts/*`. Changing a logo therefore requires a new
 filename, not a re-upload — the old one will stay cached for up to a year.
 
 ## Relationship to the estate
