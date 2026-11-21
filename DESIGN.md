@@ -61,3 +61,9 @@ All easing is one exponential ease-out (`--ease`). Everything is switched off un
 ## Layout
 
 Max content width 82rem; side padding `clamp(1.25rem, 4vw, 3.5rem)`. Below 60rem everything stacks to one column and the navigation collapses behind a Menu button.
+
+## The founder figure
+
+An illustrated figure of the founder (suit, red tie, red sneakers) appears once, in the home page scroll scene between the hero and the platform section. The page pins and scrolling plays his performance: the door opens, he walks out spinning a basketball, and the ball becomes a house, while "Own.", "Operate." and "Scale." pass beside him. It is reversible, shows a still under `prefers-reduced-motion`, and is the only place he appears.
+
+Frames live in `assets/char/` (entrance and trick sets, 24 fps, WebP, keyed off a blue backdrop). Player: `character.js`.
