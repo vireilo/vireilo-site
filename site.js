@@ -11,7 +11,6 @@
   var heroMain = document.querySelector('.hero-main');
   var verbs = [].slice.call(document.querySelectorAll('.verbs li'));
   var latin = document.querySelector('[data-latin]');
-  var roll = document.querySelector('[data-roll] img');
   var sections = [].slice.call(document.querySelectorAll('main section[id]'));
   var links = {};
   [].forEach.call(document.querySelectorAll('.nav-links a[href^="#"]'), function (a) { links[a.getAttribute('href').slice(1)] = a; });
@@ -44,15 +43,6 @@
         latin.style.transform = 'translate3d(' + (-p * 4).toFixed(2) + '%,0,0)';
       }
     }
-    // the basketball rolls along the top rule of the list as the list crosses the screen
-    if (roll) {
-      var box = roll.parentNode.getBoundingClientRect();
-      if (box.bottom > 0 && box.top < vh) {
-        var q = Math.max(0, Math.min(1, (vh * 0.9 - box.top) / (vh * 0.75)));
-        var dist = (box.width - roll.offsetWidth) * q;
-        roll.style.transform = 'translate3d(' + dist.toFixed(1) + 'px,0,0) rotate(' + (dist / (roll.offsetWidth / 2) * 57.3).toFixed(1) + 'deg)';
-      }
-    }
     // mark the section being read in the navigation
     var current = null;
     for (var j = 0; j < sections.length; j++) {
@@ -74,7 +64,24 @@
         if (e.isIntersecting) { e.target.classList.add('seen'); io.unobserve(e.target); }
       });
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
-    [].forEach.call(document.querySelectorAll('[data-r],[data-line],[data-latin],[data-wipe],[data-cameo]'), function (el) { io.observe(el); });
+    [].forEach.call(document.querySelectorAll('[data-r],[data-line],[data-latin],[data-wipe]'), function (el) { io.observe(el); });
+  }
+
+  // acts: each small performance plays once, when it is well inside the screen
+  var acts = [].slice.call(document.querySelectorAll('img[data-play]'));
+  if (still || !canWatch) {
+    acts.forEach(function (img) { img.src = img.getAttribute('data-end'); });
+  } else {
+    var stage = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        stage.unobserve(e.target);
+        var img = e.target, pre = new Image();
+        pre.onload = function () { img.src = pre.src; var box = img.closest('.act'); if (box) box.classList.add('on'); };
+        pre.src = img.getAttribute('data-play');
+      });
+    }, { threshold: 0.7 });
+    acts.forEach(function (img) { stage.observe(img); });
   }
 
   if (btn && nav) {

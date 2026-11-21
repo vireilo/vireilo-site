@@ -68,13 +68,16 @@ An illustrated figure of the founder (suit, red tie, red sneakers) appears once,
 
 Frames live in `assets/char/` (entrance and trick sets, 24 fps, WebP, keyed off a blue backdrop). Player: `character.js`.
 
-### Cameos
+### Acts
 
-Four small appearances further down the home page, meant to be found, not announced. Each is decorative (`aria-hidden`), under about 5rem, and never overlaps text.
+Seven short performances further down the home page, one per section, each matched to what the section says. Each plays once when it is well inside the screen, is decorative (`aria-hidden`), stands about 6 to 9rem tall, and never overlaps text. Under `prefers-reduced-motion` or without JavaScript each shows a still.
 
-- **Ball**: a basketball rolls along the top rule of the Own / Operate / Scale / Steward list as it scrolls past.
-- **Peek**: his head rises over the top edge of Mission & Vision.
-- **Idle**: he stands at the foot of the left values column, spinning the house (a looping WebP; a still under reduced motion).
-- **Footer**: he stands on the footer's top edge, far right.
+- **Platform**: he bounce-passes the basketball; it leaves his frame and rolls along the top rule of the Own / Operate / Scale / Steward list.
+- **Brand Meaning**: a wide-set VIREILO is missing its leaf; he takes a sprig from his jacket and sets it over the I, and the real leaf grows there.
+- **Mission & Vision**: he shades his eyes, looks toward Vision, and points.
+- **Values**: a closing rule under the left column hangs crooked; he nudges it level and dusts his hands.
+- **Own what endures**: he sets the little house down on the rule.
+- **Legacy**: standing on the footer's edge, he tosses the keys forward.
+- **Footer**: a two-finger salute, then he walks off the right edge.
 
-Sprites live in `assets/char/cameo/`. Keep to these four on the home page; more would stop being a find.
+Each act is an animated WebP that plays once (`assets/char/cameo/<name>.webp`, with `-first` and `-last` stills), swapped in by `site.js` (`img[data-play]`). They were generated on a blue backdrop and keyed with the same pipeline as the main scene. Keep to one act per section.
