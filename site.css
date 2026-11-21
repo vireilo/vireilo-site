@@ -58,13 +58,11 @@ a{color:inherit}
   background:linear-gradient(165deg,var(--navy-deep) 0%,var(--green-deep) 48%,var(--navy) 100%)}
 .hero::before{content:"";position:absolute;inset:-30%;z-index:-1;
   background:radial-gradient(ellipse 38% 34% at 34% 30%,rgba(42,107,86,.55),transparent 70%),radial-gradient(ellipse 30% 30% at 74% 62%,rgba(27,77,62,.5),transparent 70%)}
-.hero-main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.5rem;align-items:center;padding:7rem var(--pad) 3rem;max-width:calc(var(--max) + 2*var(--pad));width:100%;margin:0 auto}
-.hero h1{font-weight:800;font-stretch:112%;font-size:clamp(3.4rem,7.2vw,6rem);line-height:.94;letter-spacing:-.035em}
-.hero h1 span{display:block}
-.hero .sub{font-size:clamp(1.1rem,1.7vw,1.4rem);font-weight:500;margin-top:1.75rem;color:var(--copper-light)}
-.lockup{text-align:center}
-.lockup .wm{font-size:clamp(3rem,7.6vw,7rem);padding-top:.55em}
-.lockup .ventures{display:block;font-size:clamp(.8rem,1.4vw,1.25rem);letter-spacing:.5em;padding-left:.5em;color:var(--copper-light);margin-top:.9rem;text-transform:uppercase}
+.hero-main{display:grid;grid-template-columns:1fr;gap:0;align-content:center;justify-items:center;text-align:center;padding:7rem var(--pad) 3rem;max-width:calc(var(--max) + 2*var(--pad));width:100%;margin:0 auto}
+.hero .sub{font-size:clamp(1.1rem,1.7vw,1.4rem);font-weight:500;margin-top:1.6rem;color:var(--copper-light)}
+.lockup{text-align:center;font-weight:inherit;line-height:1}
+.lockup .wm{font-size:clamp(3rem,11.5vw,10.5rem);padding-top:.55em}
+.lockup .ventures{display:block;font-size:clamp(.8rem,1.9vw,1.7rem);letter-spacing:.5em;padding-left:.5em;color:var(--copper-light);margin-top:.9rem;text-transform:uppercase}
 .lockup .rule{display:block;height:1px;width:9.5rem;margin:1.6rem auto 0;background:linear-gradient(90deg,transparent,var(--copper-light),transparent)}
 .band{background:linear-gradient(90deg,var(--copper),var(--copper-light));color:var(--ink)}
 .band-in{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem 3rem;align-items:center;padding:1.6rem var(--pad);max-width:calc(var(--max) + 2*var(--pad));margin:0 auto}
@@ -205,8 +203,8 @@ a{color:inherit}
   .nav.open .nav-links{display:flex}
   .nav-links a{padding:.9rem 0;border-bottom:1px solid var(--rule-dark);font-size:1.05rem}
   .nav-links a.dash{margin-top:1rem;text-align:center;border:1px solid var(--copper-light)}
-  .hero-main{grid-template-columns:1fr;padding-top:6.5rem;gap:2.5rem}
-  .lockup{order:-1;text-align:left}.lockup .wm{font-size:clamp(2.6rem,13vw,4.5rem)}.lockup .rule{margin-left:0}
+  .hero-main{padding-top:6.5rem}
+  .lockup .wm{font-size:clamp(2.6rem,15vw,5rem)}
   .band-in,.head,.meaning .cols,.close .in,.two,.three,.mv,.contact-grid{grid-template-columns:1fr}
   .verbs li{grid-template-columns:1fr}
   .mv>div:first-child{padding-right:0;border-right:0;border-bottom:1px solid var(--rule-light)} .mv>div:last-child{padding-left:0}
@@ -218,14 +216,14 @@ a{color:inherit}
 @media (prefers-reduced-motion:no-preference){
   .hero::before{animation:drift 26s ease-in-out infinite alternate}
   @keyframes drift{from{transform:translate3d(-4%,-3%,0) scale(1)}to{transform:translate3d(5%,4%,0) scale(1.12)}}
-  .hero h1 span{animation:rise .9s var(--ease) both}
-  .hero h1 span:nth-child(2){animation-delay:.09s}.hero h1 span:nth-child(3){animation-delay:.18s}
-  .hero .sub{animation:fade .8s ease .5s both}
+  .hero .sub{animation:fade .9s ease 2.3s both}
   @keyframes rise{from{opacity:0;transform:translateY(.45em);clip-path:inset(0 0 100% 0)}to{opacity:1;transform:none;clip-path:inset(-10% 0 -10% 0)}}
   @keyframes fade{from{opacity:0}to{opacity:1}}
   .lockup .leaf .stem{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .7s var(--ease) .35s forwards}
   .lockup .leaf .blade{transform-box:fill-box;transform-origin:50% 100%;transform:scale(0);animation:grow .8s var(--ease) forwards}
   .lockup .leaf .blade.b1{animation-delay:.85s}.lockup .leaf .blade.b2{animation-delay:1s}.lockup .leaf .blade.b3{animation-delay:1.08s}
+  .lockup .leaf{transform-box:fill-box;transform-origin:50% 100%;animation:sway 7s ease-in-out 2.6s infinite}
+  @keyframes sway{0%,100%{transform:rotate(0)}30%{transform:rotate(3.5deg)}70%{transform:rotate(-3deg)}}
   @keyframes draw{to{stroke-dashoffset:0}} @keyframes grow{to{transform:scale(1)}}
   .lockup .wm .ch{display:inline-block;animation:letter 1s var(--ease) both;animation-delay:calc(1.15s + var(--d)*70ms)}
   @keyframes letter{from{opacity:0;filter:blur(10px);transform:translateX(calc(var(--s)*-.5em))}to{opacity:1;filter:blur(0);transform:none}}
