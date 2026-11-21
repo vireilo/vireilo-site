@@ -64,6 +64,21 @@
   </header>
 
   <main>
+  <!-- Scroll scene: scrolling plays the founder figure's performance. The door opens,
+       he walks out, and the basketball becomes a house, as the three words pass. -->
+  <section class="scene" id="transform" aria-label="Own. Operate. Scale.">
+    <div class="scene-pin" id="transformPin">
+      <div class="scene-stage" aria-hidden="true">
+        <div class="tchar-rig" id="tChar"></div>
+      </div>
+      <div class="scene-copy" aria-hidden="true">
+        <p class="tline" id="tLine1">Own.</p>
+        <p class="tline" id="tLine2">Operate.</p>
+        <p class="tline" id="tLine3">Scale.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="sec platform dark" id="platform">
     <div class="in">
       <div class="head">
@@ -201,6 +216,7 @@
     <div class="foot-base">© 2026 Vireilo Ventures LLC. Vireilo Ventures Management is the public-facing designation of Vireilo Management LLC.</div>
   </footer>
 
+  <script src="character.js" defer></script>
   <script src="site.js" defer></script>
 </body>
 </html>
