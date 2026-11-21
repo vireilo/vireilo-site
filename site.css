@@ -143,6 +143,27 @@ a{color:inherit}
   .scene-copy{min-height:5rem}
 }
 
+/* cameos: small appearances of the founder figure down the page. Decorative, never in the way of text. */
+.cameo{pointer-events:none;user-select:none}
+.cameo img{display:block;width:100%;height:auto}
+.cameo-ball{position:relative;height:0}
+.cameo-ball img{position:absolute;left:0;bottom:0;width:1.75rem;will-change:transform}
+#mission,.values .in,.foot{position:relative}
+.cameo-peek{position:absolute;right:clamp(1.5rem,9vw,9rem);bottom:100%;width:4.6rem;height:4.1rem;overflow:hidden}
+.cameo-peek img{transform:translateY(0)}
+.cameo-idle{position:absolute;left:0;bottom:0;width:4.6rem;display:block}
+.cameo-foot{position:absolute;right:clamp(1.5rem,7vw,7rem);bottom:100%;width:2.4rem}
+@media (max-width:60rem){
+  .cameo-idle{position:static;margin:2rem 0 0 auto;width:3.8rem}
+  .cameo-peek{width:3.8rem;height:3.4rem}
+}
+@media (prefers-reduced-motion:no-preference){
+  .js .cameo-peek img{transform:translateY(100%);transition:transform 1.1s var(--ease) .5s}
+  .js .cameo-peek.seen img{transform:translateY(0)}
+  .js .cameo-idle{opacity:0;transition:opacity .9s ease .6s}
+  .js .cameo-idle.seen{opacity:1}
+}
+
 /* footer */
 .foot{background:var(--navy-deep);border-top:1px solid var(--rule-dark);padding:4rem var(--pad) 2rem;font-size:.95rem}
 .foot-in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,5fr) repeat(3,minmax(0,2fr));gap:2.5rem 3rem}

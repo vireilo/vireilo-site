@@ -64,6 +64,17 @@ Max content width 82rem; side padding `clamp(1.25rem, 4vw, 3.5rem)`. Below 60rem
 
 ## The founder figure
 
-An illustrated figure of the founder (suit, red tie, red sneakers) appears once, in the home page scroll scene between the wordmark hero and the platform section. The page pins and scrolling plays his performance: the door opens, he walks out spinning a basketball, and the ball becomes a house, while "Own.", "Operate." and "Scale." pass beside him. It is reversible, shows a still under `prefers-reduced-motion`, and is the only place he appears.
+An illustrated figure of the founder (suit, red tie, red sneakers) appears once, in the home page scroll scene between the wordmark hero and the platform section. The page pins and scrolling plays his performance: the door opens, he walks out spinning a basketball, and the ball becomes a house, while "Own.", "Operate." and "Scale." pass beside him. It is reversible and shows a still under `prefers-reduced-motion`.
 
 Frames live in `assets/char/` (entrance and trick sets, 24 fps, WebP, keyed off a blue backdrop). Player: `character.js`.
+
+### Cameos
+
+Four small appearances further down the home page, meant to be found, not announced. Each is decorative (`aria-hidden`), under about 5rem, and never overlaps text.
+
+- **Ball**: a basketball rolls along the top rule of the Own / Operate / Scale / Steward list as it scrolls past.
+- **Peek**: his head rises over the top edge of Mission & Vision.
+- **Idle**: he stands at the foot of the left values column, spinning the house (a looping WebP; a still under reduced motion).
+- **Footer**: he stands on the footer's top edge, far right.
+
+Sprites live in `assets/char/cameo/`. Keep to these four on the home page; more would stop being a find.
