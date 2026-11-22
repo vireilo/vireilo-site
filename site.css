@@ -65,8 +65,8 @@ a{color:inherit}
 .lockup .ventures{display:block;font-size:clamp(.8rem,1.9vw,1.7rem);letter-spacing:.5em;padding-left:.5em;color:var(--copper-light);margin-top:.9rem;text-transform:uppercase}
 .lockup .rule{display:block;height:1px;width:9.5rem;margin:1.6rem auto 0;background:linear-gradient(90deg,transparent,var(--copper-light),transparent)}
 .band{background:linear-gradient(90deg,var(--copper),var(--copper-light));color:var(--ink)}
-.band-in{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem 3rem;align-items:center;padding:1.6rem var(--pad);max-width:calc(var(--max) + 2*var(--pad));margin:0 auto}
-.band p{font-size:clamp(1.02rem,1.35vw,1.19rem);line-height:1.45;max-width:46em;font-weight:500}
+.band-in{text-align:center;padding:1.7rem var(--pad);max-width:calc(var(--max) + 2*var(--pad));margin:0 auto}
+.band p{font-size:clamp(1.02rem,1.35vw,1.19rem);line-height:1.45;max-width:46em;margin:0 auto;font-weight:500;text-wrap:balance}
 .actions{display:flex;flex-wrap:wrap;gap:1.4rem;align-items:center}
 
 /* sections */
@@ -146,10 +146,6 @@ a{color:inherit}
 /* acts: short one-time performances by the founder figure, one per section. Decorative; never over text. */
 .act{--ch:7.5rem;position:relative;pointer-events:none;user-select:none}
 .act img{display:block;height:var(--ch);width:auto;max-width:none}
-.act-house,.act-look{height:3.5rem}
-.act-house>img,.act-look>img{position:absolute;bottom:0}
-.act-house>img{right:0}
-.act-look>img{left:40%}
 .act-leaf{--ch:9rem;margin-top:clamp(3rem,6vw,5rem);padding:calc(var(--ch)*.3) calc(var(--ch)*.75) calc(var(--ch)*.85) 0;display:flex;justify-content:center}
 .act-wm{font-family:var(--serif);font-weight:500;font-size:calc(var(--ch)*.3);line-height:1;display:inline-flex;color:rgba(247,243,235,.85);white-space:nowrap}
 .act-wm>span{margin-right:.24em}
@@ -168,8 +164,6 @@ a{color:inherit}
 @media (max-width:60rem){
   .act{--ch:6rem}
   .act-leaf{--ch:6.5rem}
-  .act-house,.act-look{height:6.5rem}
-  .act-look>img{left:auto;right:0}
   .values .in{padding-bottom:0}
   .act-level{position:relative;bottom:auto;width:100%;margin-top:1.5rem}
 }
@@ -242,7 +236,7 @@ a{color:inherit}
   .nav-links a.dash{margin-top:1rem;text-align:center;border:1px solid var(--copper-light)}
   .hero-main{padding-top:6.5rem}
   .lockup .wm{font-size:clamp(2.6rem,15vw,5rem)}
-  .band-in,.head,.meaning .cols,.close .in,.two,.three,.mv,.contact-grid{grid-template-columns:1fr}
+  .head,.meaning .cols,.close .in,.two,.three,.mv,.contact-grid{grid-template-columns:1fr}
   .verbs li{grid-template-columns:1fr}
   .mv>div:first-child{padding-right:0;border-right:0;border-bottom:1px solid var(--rule-light)} .mv>div:last-child{padding-left:0}
   .vals{columns:1} .vals li{grid-template-columns:1fr;gap:.3rem}
@@ -259,8 +253,15 @@ a{color:inherit}
   .lockup .leaf .stem{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .7s var(--ease) .35s forwards}
   .lockup .leaf .blade{transform-box:fill-box;transform-origin:50% 100%;transform:scale(0);animation:grow .8s var(--ease) forwards}
   .lockup .leaf .blade.b1{animation-delay:.85s}.lockup .leaf .blade.b2{animation-delay:1s}.lockup .leaf .blade.b3{animation-delay:1.08s}
-  .lockup .leaf{transform-box:fill-box;transform-origin:50% 100%;animation:sway 7s ease-in-out 2.6s infinite}
-  @keyframes sway{0%,100%{rotate:0deg}30%{rotate:3deg}70%{rotate:-3deg}}
+  /* the leaf stays alive: it leans in a slow breeze, catches a gust now and then, and each blade flutters on its own */
+  .lockup .leaf{transform-box:fill-box;transform-origin:50% 100%;animation:sway 9s ease-in-out 2.4s infinite}
+  @keyframes sway{0%,100%{rotate:0deg}14%{rotate:5deg}30%{rotate:-3deg}44%{rotate:2deg}56%{rotate:0deg}64%{rotate:9deg}70%{rotate:-6deg}77%{rotate:4deg}85%{rotate:-2deg}93%{rotate:1deg}}
+  .lockup .leaf .blade.b1{animation:grow .8s var(--ease) .85s forwards,tip 4.5s ease-in-out 2.6s infinite}
+  .lockup .leaf .blade.b2{transform-origin:100% 100%;animation:grow .8s var(--ease) 1s forwards,flapl 3.4s ease-in-out 2.4s infinite}
+  .lockup .leaf .blade.b3{transform-origin:0% 100%;animation:grow .8s var(--ease) 1.08s forwards,flapr 3.9s ease-in-out 2.9s infinite}
+  @keyframes tip{0%,100%{scale:1}50%{scale:1 1.09}}
+  @keyframes flapl{0%,100%{rotate:0deg}35%{rotate:-11deg}70%{rotate:5deg}}
+  @keyframes flapr{0%,100%{rotate:0deg}40%{rotate:10deg}75%{rotate:-5deg}}
   @keyframes draw{to{stroke-dashoffset:0}} @keyframes grow{to{transform:scale(1)}}
   .lockup .wm .ch{display:inline-block;animation:letter 1s var(--ease) both;animation-delay:calc(1.15s + var(--d)*70ms)}
   @keyframes letter{from{opacity:0;filter:blur(10px);transform:translateX(calc(var(--s)*-.5em))}to{opacity:1;filter:blur(0);transform:none}}
