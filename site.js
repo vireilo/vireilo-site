@@ -67,6 +67,23 @@
     [].forEach.call(document.querySelectorAll('[data-r],[data-line],[data-latin],[data-wipe]'), function (el) { io.observe(el); });
   }
 
+  // acts: each small performance plays once, when it is well inside the screen
+  var acts = [].slice.call(document.querySelectorAll('img[data-play]'));
+  if (still || !canWatch) {
+    acts.forEach(function (img) { img.src = img.getAttribute('data-end'); });
+  } else {
+    var stage = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        stage.unobserve(e.target);
+        var img = e.target, pre = new Image();
+        pre.onload = function () { img.src = pre.src; var box = img.closest('.act'); if (box) box.classList.add('on'); };
+        pre.src = img.getAttribute('data-play');
+      });
+    }, { threshold: 0.7 });
+    acts.forEach(function (img) { stage.observe(img); });
+  }
+
   if (btn && nav) {
     function setOpen(open) {
       nav.classList.toggle('open', open);

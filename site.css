@@ -143,6 +143,43 @@ a{color:inherit}
   .scene-copy{min-height:5rem}
 }
 
+/* acts: short one-time performances by the founder figure, one per section. Decorative; never over text. */
+.act{--ch:7.5rem;position:relative;pointer-events:none;user-select:none}
+.act img{display:block;height:var(--ch);width:auto;max-width:none}
+.act-house,.act-look{height:3.5rem}
+.act-house>img,.act-look>img{position:absolute;bottom:0}
+.act-house>img{right:0}
+.act-look>img{left:40%}
+.act-leaf{--ch:9rem;margin-top:clamp(3rem,6vw,5rem);padding:calc(var(--ch)*.3) calc(var(--ch)*.75) calc(var(--ch)*.85) 0;display:flex;justify-content:center}
+.act-wm{font-family:var(--serif);font-weight:500;font-size:calc(var(--ch)*.3);line-height:1;display:inline-flex;color:rgba(247,243,235,.85);white-space:nowrap}
+.act-wm>span{margin-right:.24em}
+.act-wm>span:last-child{margin-right:0}
+.act-wm .il{position:relative}
+.act-wm .leaf{position:absolute;left:50%;bottom:92%;width:.62em;height:.62em;transform:translateX(-50%);color:var(--copper-light);overflow:visible}
+.act-wm .leaf .stem{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round}
+.act-wm .leaf .blade{fill:currentColor}
+.act-wm img{position:absolute;left:calc(50% - var(--ch)*.064);top:calc(-.23em - var(--ch)*.113)}
+.values .in,.foot{position:relative}
+.values .in{padding-bottom:4.5rem}
+.act-level{position:absolute;left:0;bottom:-1rem;width:calc(50% - 1.5rem);display:flex;justify-content:flex-end}
+.act-rule{position:absolute;left:0;right:calc(var(--ch)*.5);top:36%;height:1px;background:rgba(20,17,11,.3);transform-origin:left}
+.act-keys{position:absolute;right:clamp(.5rem,5vw,5rem);bottom:100%}
+.foot{overflow-x:clip}
+@media (max-width:60rem){
+  .act{--ch:6rem}
+  .act-leaf{--ch:6.5rem}
+  .act-house,.act-look{height:6.5rem}
+  .act-look>img{left:auto;right:0}
+  .values .in{padding-bottom:0}
+  .act-level{position:relative;bottom:auto;width:100%;margin-top:1.5rem}
+}
+@media (prefers-reduced-motion:no-preference){
+  .js .act-wm .leaf{opacity:0;transform:translateX(-50%) scale(.2);transform-origin:50% 100%;transition:opacity .5s ease 6s,transform 1s var(--ease) 6s}
+  .js .act.on .act-wm .leaf{opacity:1;transform:translateX(-50%) scale(1)}
+  .js .act-rule{transform:rotate(2.2deg);transition:transform 1.5s var(--ease) 1.7s}
+  .js .act.on .act-rule{transform:none}
+}
+
 /* footer */
 .foot{background:var(--navy-deep);border-top:1px solid var(--rule-dark);padding:4rem var(--pad) 2rem;font-size:.95rem}
 .foot-in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,5fr) repeat(3,minmax(0,2fr));gap:2.5rem 3rem}
