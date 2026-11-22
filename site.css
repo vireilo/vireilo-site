@@ -247,27 +247,36 @@ a{color:inherit}
 @media (prefers-reduced-motion:no-preference){
   .hero::before{animation:drift 26s ease-in-out infinite alternate}
   @keyframes drift{from{transform:translate3d(-4%,-3%,0) scale(1)}to{transform:translate3d(5%,4%,0) scale(1.12)}}
-  .hero .sub{animation:fade .9s ease 2.3s both}
+  .hero .sub{animation:fade .9s ease 1.7s both}
   @keyframes rise{from{opacity:0;transform:translateY(.45em);clip-path:inset(0 0 100% 0)}to{opacity:1;transform:none;clip-path:inset(-10% 0 -10% 0)}}
   @keyframes fade{from{opacity:0}to{opacity:1}}
-  .lockup .leaf .stem{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .7s var(--ease) .35s forwards}
-  .lockup .leaf .blade{transform-box:fill-box;transform-origin:50% 100%;transform:scale(0);animation:grow .8s var(--ease) forwards}
-  .lockup .leaf .blade.b1{animation-delay:.85s}.lockup .leaf .blade.b2{animation-delay:1s}.lockup .leaf .blade.b3{animation-delay:1.08s}
-  /* the leaf stays alive: it leans in a slow breeze, catches a gust now and then, and each blade flutters on its own */
-  .lockup .leaf{transform-box:fill-box;transform-origin:50% 100%;animation:sway 9s ease-in-out 2.4s infinite}
+  /* the leaf blows in like a leaf on a fall day, tumbles down onto the I, then stays alive:
+     a slow breeze, a gust now and then, each blade fluttering, and a lean whenever the page scrolls */
+  .wm .leaf{transform-box:fill-box;transform-origin:50% 100%;rotate:calc(var(--gust,0)*1deg)}
+  .lockup .leaf{animation:blowin 3s cubic-bezier(.3,.5,.3,1) 1.9s both,sway 9s ease-in-out 5s infinite;animation-composition:replace,add}
+  @keyframes blowin{
+    0%{opacity:0;transform-origin:50% 50%;translate:-46vw -16vh;rotate:-560deg;scale:.8}
+    7%{opacity:1}
+    26%{translate:-31vw -1vh;rotate:-390deg;scale:1.12}
+    46%{translate:-18vw -11vh;rotate:-215deg;scale:.94}
+    64%{translate:-8vw -3vh;rotate:-100deg;scale:1.06}
+    80%{translate:-2.2vw -5vh;rotate:-28deg;scale:1}
+    91%{transform-origin:50% 50%;translate:.5vw -1vh;rotate:7deg}
+    100%{opacity:1;transform-origin:50% 100%;translate:0 0;rotate:0deg;scale:1}
+  }
   @keyframes sway{0%,100%{rotate:0deg}14%{rotate:5deg}30%{rotate:-3deg}44%{rotate:2deg}56%{rotate:0deg}64%{rotate:9deg}70%{rotate:-6deg}77%{rotate:4deg}85%{rotate:-2deg}93%{rotate:1deg}}
-  .lockup .leaf .blade.b1{animation:grow .8s var(--ease) .85s forwards,tip 4.5s ease-in-out 2.6s infinite}
-  .lockup .leaf .blade.b2{transform-origin:100% 100%;animation:grow .8s var(--ease) 1s forwards,flapl 3.4s ease-in-out 2.4s infinite}
-  .lockup .leaf .blade.b3{transform-origin:0% 100%;animation:grow .8s var(--ease) 1.08s forwards,flapr 3.9s ease-in-out 2.9s infinite}
+  .lockup .leaf .blade{transform-box:fill-box;transform-origin:50% 100%}
+  .lockup .leaf .blade.b1{animation:tip 4.5s ease-in-out 1.1s infinite}
+  .lockup .leaf .blade.b2{transform-origin:100% 100%;animation:flapl 3.4s ease-in-out 1.1s infinite}
+  .lockup .leaf .blade.b3{transform-origin:0% 100%;animation:flapr 3.9s ease-in-out 1.3s infinite}
   @keyframes tip{0%,100%{scale:1}50%{scale:1 1.09}}
   @keyframes flapl{0%,100%{rotate:0deg}35%{rotate:-11deg}70%{rotate:5deg}}
   @keyframes flapr{0%,100%{rotate:0deg}40%{rotate:10deg}75%{rotate:-5deg}}
-  @keyframes draw{to{stroke-dashoffset:0}} @keyframes grow{to{transform:scale(1)}}
-  .lockup .wm .ch{display:inline-block;animation:letter 1s var(--ease) both;animation-delay:calc(1.15s + var(--d)*70ms)}
+  .lockup .wm .ch{display:inline-block;animation:letter 1s var(--ease) both;animation-delay:calc(.3s + var(--d)*70ms)}
   @keyframes letter{from{opacity:0;filter:blur(10px);transform:translateX(calc(var(--s)*-.5em))}to{opacity:1;filter:blur(0);transform:none}}
-  .lockup .ventures{animation:track 1.1s var(--ease) 1.75s both}
+  .lockup .ventures{animation:track 1.1s var(--ease) 1s both}
   @keyframes track{from{opacity:0;letter-spacing:.1em}to{opacity:1;letter-spacing:.5em}}
-  .lockup .rule{animation:ruleg 1s var(--ease) 2s both}
+  .lockup .rule{animation:ruleg 1s var(--ease) 1.3s both}
   @keyframes ruleg{from{transform:scaleX(0)}to{transform:scaleX(1)}}
   .band{animation:wipe 1s var(--ease) .55s both}
   @keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}

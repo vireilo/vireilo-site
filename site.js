@@ -53,7 +53,23 @@
       else links[id].removeAttribute('aria-current');
     }
   }
-  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+  // the leaf leans with the scroll, like a leaf caught by the air the page moves, then settles
+  var gust = 0, gustTo = 0, lastY = window.scrollY, blowing = false;
+  function blow() {
+    gustTo *= 0.86;
+    gust += (gustTo - gust) * 0.18;
+    if (Math.abs(gust) < 0.05 && Math.abs(gustTo) < 0.05) { gust = 0; blowing = false; }
+    document.documentElement.style.setProperty('--gust', gust.toFixed(2));
+    if (blowing) requestAnimationFrame(blow);
+  }
+  function onScroll() {
+    if (!still) {
+      var y = window.scrollY, dy = y - lastY; lastY = y;
+      gustTo = Math.max(-34, Math.min(34, gustTo + dy * 0.55));
+      if (!blowing) { blowing = true; requestAnimationFrame(blow); }
+    }
+    if (!ticking) { ticking = true; requestAnimationFrame(frame); }
+  }
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   frame();
